@@ -4,8 +4,10 @@ root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
 
-The course is aimed at researchers in biological and biomedical sciences (PhD students, postdocs, technicians, etc...) who are interested in Open Science and data management.
+The course is aimed at researchers in chronobiology (PhD students, postdocs, technicians, etc...) who are interested in Open Science and data management.
 The course explains the FAIR (Findable, Accessible, Interoperable, Reusable) principles for data re-use, and how to practically apply FAIR principles throughout projects' life cycles. 
+
+This course is a modified version of the carpentry incubator course: [FAIR in (biological) practice](https://carpentries-incubator.github.io/fair-bio-practice/), with some of the exercises and examples based on circadian data.
 
 ## Introduction
 
@@ -39,7 +41,7 @@ Course instructors should check the *instructors* folder which contains:
 
 > ## Prerequisites
 >
-> You don't need to have prior knowledge of data management or programming skills.
+> You don't need to have prior knowledge of data management or programming skills. Although branded as FAIR in circadian practice, the course is accessible to all biomedical researches regardless of their background.
 > You do need to be willing to learn how to apply FAIR principles in your daily research life.
 > 
 > ### We expect you to:
@@ -53,9 +55,8 @@ Course instructors should check the *instructors* folder which contains:
 {: .prereq }  
   
   
-> Another course aimed at PIs running their research groups 
-> [FAIR in (Biological) Practice for PIs](https://carpentries-incubator.github.io/fair-for-leaders/) 
-> is under development in 2022. 
+> There is another course aimed at PIs running their research groups 
+> [FAIR in (Biological) Practice for PIs](https://carpentries-incubator.github.io/fair-for-leaders/). 
 >
 > Bioinformaticians and those who mostly develop scientific software may also benefit from software 
 > specific courses such as [Open Science with R](https://carpentries-incubator.github.io/open-science-with-r/) or other courses
