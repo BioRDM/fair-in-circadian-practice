@@ -59,7 +59,7 @@ circadian rhythms, which have a roughly 24-hour period, the period refers to the
 for the rhythm to complete one full cycle, typically from one peak (or trough) to the next 
 peak (or trough).
 
-
+In order to characterize the data with period/phase/amplitude we model the observed signal as known mathematical function of periodic properties, typically cosine. 
 
 ## I am a section
 
