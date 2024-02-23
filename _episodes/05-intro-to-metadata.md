@@ -245,13 +245,18 @@ without any further input from you.
 >
 >> ## Solution
 >> Some typical elements are:
->> * biological material, e.g. Species, Genotypes, Tissue type, Age, Health conditions
->> * biological context, e.g. speciment growth, entrainment, samples preparation
->> * experimental factors and conditions, e.g. drug treatments, stress factors
+>> * biological material, e.g. Species, Genotypes, Whole organism or Tissue type, Age, Health conditions
+>> * biological context, e.g. speciment growth/husbandry, entrainment, samples preparation
 >> * primers, plasmid sequences, cell line information, plasmid construction
+>> * experimental factors and conditions, e.g. drug treatments, stress factors
+>> * free-running or entrained
+>> * timing of events, type of intervention, 
+>> * meaning of 0 in data, ZT0
 >> * specifics of data acquisition
 >> * specifics of data processing and analysis
 >> * definition of variables
+>> * post processing (binning, detrending, background removal),
+>> * method of period analysis 
 >> * accompanying code, software used (version nr), parameters applied, statistical tests used, seed for randomisation
 >> * LOT numbers
 > {: .solution}
