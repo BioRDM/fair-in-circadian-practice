@@ -198,14 +198,14 @@ It is possible to obtain a frequency spectrum for the data by using the predicti
 > * cosine function is the best model for periodic signals
 > 
 >
->> ## Solution
->>
->> * there is one and clear definition of phase in circadian data (False)
->> * all methods of period analysis are based on fitting cosine curves (False, MESA, periodograms are example of methods without curve fitting)
->> * using time of peaks can be used to describe phase of the data (True)
->> * using time of troughs can be used to describe phase of the data (True)
->> * cosine function is the best model for periodic signals (False, it depends on the shape of the signal, a square pulse may be better for activity data)
->
+> > ## Solution
+> >
+> > * there is one and clear definition of phase in circadian data (False)
+> > * all methods of period analysis are based on fitting cosine curves (False, MESA, periodograms are example of methods without curve fitting)
+> > * using time of peaks can be used to describe phase of the data (True)
+> > * using time of troughs can be used to describe phase of the data (True)
+> > * cosine function is the best model for periodic signals (False, it depends on the shape of the signal, a square pulse may be better for activity data)
+> >
 > {: .solution}
 {: .challenge}
 
