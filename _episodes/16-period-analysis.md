@@ -140,44 +140,76 @@ Finally, in the circadian field we may prefer using other measures, like onset/o
 ![Figure 8. Onset of activity](../fig/16-phase_4.png)  
 Figure 8. Onset of activity. Credit [http://dx.doi.org/10.3791/2463](http://dx.doi.org/10.3791/2463)
 
+## Methods
 
-## I am a section
+**Cosinor** - originally fit one cosine of period 24h to the data.
 
-With a text.
+Fitting `f(x) = A * cos(2π/T * (x - P))` is easy if we know the period T.
+In that case, the cosine of phase P, is equivalent to a sum of cos and sin with the same period but different amplitudes.  
+`A * cos(2π/T * (x - P)) = α *cos(2π/T * x) - β * cos(2π/T * x)`
 
-![Figure 1. I am some figure](../fig/figure_file.jpg)
+as both the T is known and the x (x is the time of each measurement/data point),
+`α β` can be found by simple linear regression. The original phase and amplitude can be computed using the ratio of alpha and beta values.
 
-*After [Figure source](https://www.figure.link/)*
+That works for the entrained (to 24h) data, but, what to do for free running periods. We can scan circadian period range, for example between 20 and 28 hours every hour. We can then fit a cosine of this period to the data, and select the one period which had the smallest error in the fit.
+
+**MFourFit** - tries to reconstruct the signal using harmonics.
+
+It takes main cos and sin of a given period T and adds to them up to 5 harmonics,
+ie. it adds cos and sin of periods T/2 T/3 T/4 T/5. It is a simple linear regression problem. Once the components are found it calculates the fit error.
+
+As you could probably guess, to get the period values, it scans periods within an interesting range and selects the one for which the best fit could be obtain.
+
+**FFT NLLS** - this method is also based on curve fitting, but, unlike the previous one it simultaneously fits period and phase and amplitude. It is possible using computational intensive non-linear least square method. 
+
+It finds up to 5 cosine (typically 3 is enough) components of different phase, period and amplitudes which summed estimate the original curve. 
+The properties of the cosine component of period within the *circadian* range are used as the period, phase, and amplitude.
+
+The non linear fitting requires *sensible* starting period parameters to succeed, to find those initial guesses the FFT method is used. Hence, the name FFT NLLS. Fast fourier transform calculates the main *frequency* components in the signal (frequency is 1/T).
+
+So why the FFT alone is not used instead? The frequency resolution of fft (so which peaks can be found) depends on number of data points and the interval between them, and in typical circadian data is not good enough to distinguish for example between periods 24 and 23h. 
+
+**Maximum Entropy Spectral Analysis (MESA)** - uses a completely different approach based on stochastic modelling. MESA first fits an autoregressive model to the data. This model assumes that the value at a given time point is the combination of a number of previous values plus some stochastic process (noise):
+
+X[t] = a1X[t-1]+ a2X[t-2]+ a3X[t-3]+ ...+anX[t-N]+ η
+
+(where: ai are model coefficients, X[t-i] is the data value at previous time point t-i, η is noise, N is the length of the model)
+
+Model coefficients can also be considered as the coefficients of a prediction filter (PF) of length N, where the next value can be predicted using the previous values. Such equations can be written for each data point and filter coefficients that minimise the difference between the predicted and original values can be found using a least-squares approach.
+
+It is possible to obtain a frequency spectrum for the data by using the prediction coefficients. In general, a frequency spectrum characterizes the presence (contribution) of each frequency within the signal, with the most common example being the Fourier Transform power spectrum. Since frequency is the inverse of the period, finding the maximum in a frequency spectrum also identifies the strongest period of the data. 
 
 
-> ## I am a yellow info
+> ## More information on period analysis
 >
-> And my text.
+> [BioDare2 docs](https://biodare2.ed.ac.uk/documents/period-methods)  
+> [Comparison of period analysis methods](https://doi.org/10.1371/journal.pone.0096462)  
+> 
 {: .callout}
 
 
-~~~
-I am code
-~~~
-{: .source}
 
-
-> ## I am a problem
+> ## Quiz
 >
-> Defined here.
+> Answer True / False to the following statements.
+> * there is one and clear definition of phase in circadian data
+> * all methods of period analysis are based on fitting cosine curves
+> * using time of peaks can be used to describe phase of the data
+> * using time of troughs can be used to describe phase of the data
+> * cosine function is the best model for periodic signals
+> 
 >
 >> ## Solution
 >>
->> *   I am an answer.
->> *   So am I.
+>> * there is one and clear definition of phase in circadian data (False)
+>> * all methods of period analysis are based on fitting cosine curves (False, MESA, periodograms are example of methods without curve fitting)
+>> * using time of peaks can be used to describe phase of the data (True)
+>> * using time of troughs can be used to describe phase of the data (True)
+>> * cosine function is the best model for periodic signals (False, it depends on the shape of the signal, a square pulse may be better for activity data)
+>
 > {: .solution}
 {: .challenge}
 
-
-> ## Attribution
-> Content of this episode was adopted after XXX et al.
-> [YYY](https://biodare2.ed.ac.uk).
-{: .callout}
 
 
 {% include links.md %}
