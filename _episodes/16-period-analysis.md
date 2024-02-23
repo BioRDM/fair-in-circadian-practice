@@ -3,17 +3,16 @@ title: "Methods of period analysis"
 teaching: 60
 exercises: 0
 questions:
-- ""
-- ""
-- ""
+- "What is period, phase and amplitude?"
+- "How to extra period value from a data"
+- "How period analysis works"
 objectives:
-- ""
-- ""
-- ""
+- "Define period and phase concepts"
+- "Understand rationale behind fitting cosine functions to data"
+- "Name main period analysis methods"
 keypoints:
-- ""
-- ""
-- ""
+- "There is no one best period analysis methods, the performance depends on duration, sampling and noise level of the data"
+
 ---
 
 Period analysis and rhythmicity tests are techniques used in the analysis of circadian time
