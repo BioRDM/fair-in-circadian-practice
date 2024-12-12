@@ -6,7 +6,7 @@
 This lesson provides the foundation for practical incorporation of Open Science and FAIR data principles into biological research data managment and is based on
 FAIR in (biological) practice.
 
-Some excercises were tailored to the circadian field, and there is en episode about using BioDar2 for period analysis.
+Some excercises were tailored to the circadian field, and there is en episode about using BioDare2 for period analysis.
 Check the instructor folder for the tailored content, the rendered version may still contain original exercises
 
 We [(the UoE BioRDM team)](https://www.wiki.ed.ac.uk/display/RDMS/Research+Data+Management+SynthSys+%28f1sysrdm%29+Home) have identified that a gap exists in the knowledge of how to apply FAIR principles to real-life day-to-day biological research. An understanding of the principles of good data management is just as important as the practicalities. Researchers must become conversant with the Open Science ethos, the Reproducible Research movement, and the FAIR principles, to explain their new skills and to recognize or evaluate them in their peers.
